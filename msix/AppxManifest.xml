@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Plantilla MSIX de Miau Screen Recorder.
+     Reemplaza los 3 valores marcados con "CAMBIAR" por los que te da Partner Center
+     (Product management > Product identity) DESPUÉS de reservar el nombre de la app. -->
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+         IgnorableNamespaces="uap rescap">
+
+  <Identity Name="ia21.MiauScreenRecorder"
+            Publisher="CN=99EC47F4-46C8-451A-8D0C-554779C4B800"
+            Version="1.0.0.0"
+            ProcessorArchitecture="x64" />
+
+  <Properties>
+    <DisplayName>Miau Screen Recorder</DisplayName>
+    <PublisherDisplayName>ia21</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+
+  <Applications>
+    <Application Id="MiauScreenRecorder" Executable="Miau Screen Recorder.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Miau Screen Recorder"
+                          Description="Lightweight screen recorder with desktop and microphone audio and a camera overlay."
+                          BackgroundColor="#0B0F18"
+                          Square150x150Logo="Assets\Square150x150Logo.png"
+                          Square44x44Logo="Assets\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+    <DeviceCapability Name="microphone" />
+    <DeviceCapability Name="webcam" />
+  </Capabilities>
+</Package>
